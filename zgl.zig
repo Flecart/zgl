@@ -1607,7 +1607,7 @@ pub const TextureParameter = enum(types.Enum) {
     compare_mode = binding.TEXTURE_COMPARE_MODE,
     lod_bias = binding.TEXTURE_LOD_BIAS,
     min_filter = binding.TEXTURE_MIN_FILTER,
-    mag_filter = binding.TEXTURE_MAG_FILTER,
+    max_filter = binding.TEXTURE_MAX_FILTER,
     min_lod = binding.TEXTURE_MIN_LOD,
     max_lod = binding.TEXTURE_MAX_LOD,
     max_level = binding.TEXTURE_MAX_LEVEL,
@@ -1638,7 +1638,7 @@ pub fn TextureParameterType(comptime param: TextureParameter) type {
             zero = binding.ZERO,
             one = binding.ONE,
         },
-        .mag_filter => enum(types.Int) {
+        .max_filter => enum(types.Int) {
             nearest = binding.NEAREST,
             linear = binding.LINEAR,
         },
